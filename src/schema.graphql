@@ -1,0 +1,25 @@
+const {gql} = require('apollo-server-express')
+const typeDefs=gql` 
+scalar Upload
+    type Query{
+        info:String!
+        users:[User!]
+    }
+    type Mutation{
+        NewUser( nom:String!, categorie:String!, statut:String!,date1:String!,date2:String!,date3:String!, photo:Upload!,numero:String!):User!
+    }
+    type User{
+        id:ID!
+        nom:String!
+        categorie:String!
+        statut:String!
+        date1:String!
+        date2:String!
+        date3:String!
+        photo:String!
+        numero:String! 
+    }
+    `
+module.exports= {
+    typeDefs
+}
