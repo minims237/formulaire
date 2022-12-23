@@ -4,9 +4,10 @@ scalar Upload
     type Query{
         info:String!
         users:[User!]
+        deleteUsers(numero:String!):Boolean!
     }
     type Mutation{
-        NewUser( nom:String!, categorie:String!, statut:String!,date1:String!,date2:String!,date3:String!, photo:Upload!,numero:String!):User!
+        NewUser( nom:String!, categorie:String!, statut:String!,date1:String!,date2:String!,date3:String!, photo:[Upload!],numero:String!):User!
     }
     type User{
         id:ID!
@@ -16,7 +17,7 @@ scalar Upload
         date1:String!
         date2:String!
         date3:String!
-        photo:String!
+        photo:[String!]
         numero:String! 
     }
     `

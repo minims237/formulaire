@@ -18,6 +18,6 @@ model User{
         date1 String
         date2 String
         date3 String
-        photo String
+        photo String[]
         numero String @unique
     }

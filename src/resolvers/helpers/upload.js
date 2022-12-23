@@ -17,9 +17,9 @@ const drive = google.drive({
 
 const storeUpload = async upload => {
   const {  createReadStream, filename, mimetype } = await upload
-  console.log(upload);
-  console.log( upload.file.createReadStream)
-    console.log(filename)
+  console.log("le fichier",upload);
+  console.log("la fonction", upload.file.createReadStream)
+    console.log("nom du fichier",upload.file.filename)
     const id = shortid.generate()
     let docId=""
     let path = `https://drive.google.com/uc?export=view&id=${docId}`

@@ -9,8 +9,19 @@ const NewUser=async(parent,args,context,info)=>{
         photo,
         numero
     }=args
-  const ph = await context.storeUpload(photo)  
-    console.log( 'valeur link'+ph.path);
+phtos=[]
+console.log("debut de lup");
+    await Promise.all(
+        photo.map(async(valeur)=> { const valeu = await context.storeUpload(valeur)  
+         console.log( 'valeur'+valeu);
+         phtos.push(valeu.path)
+         console.log(phtos );
+          }  ) , 
+                     
+     
+                     console.log("link",phtos))
+                     console.log("fin de lup");
+
     
     const user=await context.prisma.user.create({
         data:{
@@ -20,7 +31,7 @@ const NewUser=async(parent,args,context,info)=>{
             date1,
             date2,
             date3, 
-            photo:ph.path,
+            photo:{set:phtos},
             numero
         }
        

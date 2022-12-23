@@ -24,6 +24,7 @@ const server = new ApolloServer({
     playground: true,
     introspection: true
   });
+
 app.use(graphqlUploadExpress())
 app.use('/uploads',cors({
   origin: true,

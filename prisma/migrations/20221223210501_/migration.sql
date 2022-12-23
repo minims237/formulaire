@@ -7,7 +7,7 @@ CREATE TABLE "User" (
     "date1" TEXT NOT NULL,
     "date2" TEXT NOT NULL,
     "date3" TEXT NOT NULL,
-    "photo" TEXT NOT NULL,
+    "photo" TEXT[],
     "numero" TEXT NOT NULL,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")

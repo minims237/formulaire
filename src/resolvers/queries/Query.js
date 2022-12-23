@@ -1,6 +1,7 @@
-const {users,info}=require('./user')
+const {users,info,deleteUsers}=require('./user')
 
 module.exports={
     users,
-    info
+    info,
+    deleteUsers
 }
