@@ -5,6 +5,7 @@ scalar Upload
         info:String!
         users:[User!]
         deleteUsers(numero:String!):Boolean!
+        userByNumero(numero:String!):User!
     }
     type Mutation{
         NewUser( nom:String!, categorie:String!, statut:String!,date1:String!,date2:String!,date3:String!, photo:[Upload!],numero:String!):User!

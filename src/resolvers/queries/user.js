@@ -19,8 +19,22 @@ const deleteUsers=async (parent, args, context, info) => {
     
         
 }
+const userByNumero=async (parent, args, context, info) => {
+    const {numero}=args
+    try {
+        const user=await context.prisma.user.findUnique({
+            where: {
+              numero: numero,
+            },
+          })
+        return user
+    } catch (e) {
+        throw new Error("chargement d'un utilsateur a echouer")
+    }
+}
 module.exports={
     users,
     info,
-    deleteUsers
+    deleteUsers,
+    userByNumero
 }
